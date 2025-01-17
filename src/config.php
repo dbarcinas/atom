@@ -11,7 +11,7 @@ namespace atom;
  * @param mixed|null $data The data to set for the specified key
  * @return mixed
  */
-function config(?string $path = null, $value = null) {
+function config(?string $path = null, $data = null) {
   // defaults
   static $config = [
     'template' => [
@@ -27,8 +27,8 @@ function config(?string $path = null, $value = null) {
       $ref = &$ref[$token];
       $token = strtok('.');
     }
-    if ($value) {
-      $ref = is_array($value) ? array_merge($ref, $value) : $value;
+    if ($data) {
+      $ref = is_array($data) && is_array($ref) ? array_merge($ref, $data) : $data;
     }
   }
   return $ref;

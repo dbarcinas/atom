@@ -41,7 +41,7 @@ function routes(): array {
     },
     'fetch' => fn(): array => $routes,
     'cache' => fn(): array => $cache,
-    'set_cache' => function ($pattern) use (&$cache): void {
+    'set_cache' => function (string $pattern) use (&$cache): void {
       $cache[] = $pattern;
     },
   ];

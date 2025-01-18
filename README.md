@@ -140,6 +140,21 @@ stack('/dashboard', function ($route) {
 dispatch();
 ```
 
+**Custom 404 Page**
+
+```php
+use function atom\{route, dispatch};
+
+// Routes
+// route(...);
+// route(...);
+
+// Dispatch with a custom error handler
+dispatch(function ($request, $method) {
+    echo '404 Not Found.';
+});
+```
+
 **Note:** Routes are automatically cached for faster response and improved performance speed.
 
 ## Templates

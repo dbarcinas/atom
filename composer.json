@@ -1,6 +1,6 @@
 {
     "name": "dbarcinas/atom",
-    "description": "The freedom PHP micro framework",
+    "description": "The procedural PHP micro framework",
     "type": "library",
     "license": "MIT",
     "authors": [

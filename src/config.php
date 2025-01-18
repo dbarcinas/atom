@@ -14,7 +14,7 @@ namespace atom;
 function config(?string $path = null, $data = null) {
   // defaults
   static $config = [
-    'template' => [
+    'templates' => [
       'debug' => false,
       'path' => __DIR__ . '/../templates',
       'cache_path' => __DIR__ . '/../cache',

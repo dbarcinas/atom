@@ -3,7 +3,7 @@
 use function atom\{config, template_context, render};
 
 beforeEach(function () {
-  config('template', [
+  config('templates', [
     'path' => __DIR__ . '/templates',
     'cache_path' => __DIR__ . '/templates/cache',
   ]);
@@ -141,7 +141,7 @@ it('regenerates cache if template changes', function () {
 
 it('does not cache if disabled', function () {
   // disable cache
-  config('template.debug', true);
+  config('templates.debug', true);
   // Create a view
   $template = 'no_cache';
   file_put_contents($this->templatesPath . "{$template}.php", "<?php echo 'Non-Cached Content';");

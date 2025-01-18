@@ -76,7 +76,7 @@ function layout(string $layout): void {
  * @return void
  */
 function render(string $template, array $data = []): void {
-  $config = config('template');
+  $config = config('templates');
   $debug = $config['debug'];
   $path = rtrim($config['path'], '/') . '/';
   $cache_path = rtrim($config['cache_path'], '/') . '/';

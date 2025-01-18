@@ -111,6 +111,35 @@ route('get', '/bar', function () {
     // ...
 }, '@bar', ['auth', 'logger']);
 ```
+
+**Route Groups**
+
+```php
+use function atom\{dispatch, stack};
+
+// Grouping routes in atom are called stacks
+// $route is delegated to 'route(...)'
+stack('/api/user', function ($route) {
+    $route('GET', '/{id:int}' function ($id) {
+        // Maps to '/api/user/1'
+        // ...
+    });
+
+    // Middleware example
+    $route(['GET', 'POST'], '/feed', function () {
+        // Maps to '/api/user/feed'
+        // ...
+    }, '@api.user.feed', ['auth']);
+});
+
+// Middleware
+stack('/dashboard', function ($route) {
+    // ...
+}, ['auth', 'logger']);
+
+dispatch();
+```
+
 **Note:** Routes are automatically cached for faster response and improved performance speed.
 
 ## Templates
